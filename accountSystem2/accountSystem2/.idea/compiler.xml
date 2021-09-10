@@ -6,8 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="accountSystem2" />
+        <module name="AccountSystemDomain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AccountSystem" target="8" />
+      <module name="AccountSystemLogic" target="8" />
+      <module name="AccountSystemRepository" target="8" />
+      <module name="AccountSystemTranslator" target="8" />
+      <module name="AccountSystemWeb" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
