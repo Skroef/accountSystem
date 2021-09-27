@@ -1,12 +1,13 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.logic.flow.CreateAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
+import za.ac.nwu.accountSystem2.domain.dto.AccountTypeDto;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
+
 
 @Transactional
 @Component("createAccountTypeFlowName")

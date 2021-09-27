@@ -1,4 +1,4 @@
-package za.ac.nwu.ac.domain.dto;
+package za.ac.nwu.accountSystem2.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
@@ -13,8 +13,7 @@ import java.util.Objects;
 
 public class AccountTypeDto implements Serializable {
 
-    private static final long serialVersionUID = ;
-
+    private static final long serialVersionUID = 2833472885192360732L;
     private String mnemonic;
     private String accountTypeName;
     private LocalDate creationDate;
@@ -34,33 +33,6 @@ public class AccountTypeDto implements Serializable {
         this.setAccountTypeName(accountType.getAccountTypeName());
         this.setCreationDate(accountType.getCreationDate());
     }
-
-//    public String getmnemonic(){
-//
-//        return mnemonic;
-//    }
-//    public String getAccountTypeName() {
-//
-//        return accountTypeName;
-//    }
-//    public LocalDate getCreationDate() {
-//
-//        return creationDate;
-//    }
-//
-//    public void setMnemonic(String mnemonic) {
-//
-//        this.mnemonic = mnemonic;
-//    }
-//    public void setAccountTypeName(String accountTypeName) {
-//
-//        this.accountTypeName = accountTypeName;
-//    }
-//
-//    public void setAccountTypeName(LocalDate creationDate) {
-//
-//        this.creationDate = creationDate;
-//    }
 
     @ApiModelProperty(position = 1,
         value = "AccountType Mnemonic",
@@ -105,7 +77,7 @@ public class AccountTypeDto implements Serializable {
         return  Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
     }
     @JsonIgnore
-    public  AccountType getAccountType(){
+    public AccountType getAccountType(){
         return new AccountType(getMnemonic(), getAccountTypeName(), getCreationDate());
     }
 

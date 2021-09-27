@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class GeneralResponse<T> implements Serializable {
 
-    private static final long serialVersionUID = -2109552313657529496L;
+    private static final long serialVersionUID = -3613388980582073346L;
     private final boolean successful;
     private final transient T payload;
 

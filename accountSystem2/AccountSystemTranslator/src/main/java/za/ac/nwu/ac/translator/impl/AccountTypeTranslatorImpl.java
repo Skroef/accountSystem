@@ -2,15 +2,16 @@ package za.ac.nwu.ac.translator.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.repo.persistance.AccountTypeRepository;
+import za.ac.nwu.ac.translator.AccountTypeTranslator;
+import za.ac.nwu.accountSystem2.domain.dto.AccountTypeDto;
 import za.ac.nwu.accountSystem2.domain.persistence.AccountType;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class AccountTypeTranslatorImpl implements {
+public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     private final AccountTypeRepository accountTypeRepository;
 
     @Autowired
@@ -31,6 +32,11 @@ public class AccountTypeTranslatorImpl implements {
         return accountTypeDtos;
     }
 
+//    @Override
+//    public List<AccountTypeDto> getAllAccountTypes() {
+//        return null;
+//    }
+
     @Override
     public AccountTypeDto create(AccountTypeDto accountTypeDto){
         try{
@@ -40,5 +46,10 @@ public class AccountTypeTranslatorImpl implements {
             throw new RuntimeException("Unable to save to the DB", e);
         }
     }
+//
+//    @Override
+//    public AccountTypeDto getAccountTypesByMnemonicNativeQuery(String mnemonic) {
+//        return null;
+//    }
 
 }

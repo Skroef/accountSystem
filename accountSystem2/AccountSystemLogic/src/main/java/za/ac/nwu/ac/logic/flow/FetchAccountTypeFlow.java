@@ -8,4 +8,6 @@ import java.util.List;
 @Component
 public interface FetchAccountTypeFlow {
     List<AccountTypeDto> getAllAccountTypes();
+
+    AccountTypeDto getAccountTypeByMnemonic(String mnemonic);
 }

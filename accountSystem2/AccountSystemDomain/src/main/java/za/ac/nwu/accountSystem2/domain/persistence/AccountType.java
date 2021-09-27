@@ -1,21 +1,23 @@
 package za.ac.nwu.accountSystem2.domain.persistence;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "DEMO_ACCOUNT_TYPE")
 public class AccountType implements Serializable {
 
-    private static final long serialVersionUID = 3833725316797154577L;
 
+    private static final long serialVersionUID = -1145957135478951066L;
     private Long accountTypeId;
     private String mnemonic;
     private String accountTypeName;
     private LocalDate creationDate;
+
+    private Set<AccountTransaction> accountTransactions;
 
     public AccountType() {
 
@@ -56,8 +58,6 @@ public class AccountType implements Serializable {
     public Set<AccountTransaction> getAccountTransactions(){
         return getAccountTransactions();
     }
-
-
 
     public void setAccountTypeId(Long accountTypeId) {
 
