@@ -7,11 +7,11 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE")
+@Table(name = "Project1")
 public class AccountType implements Serializable {
 
 
-    private static final long serialVersionUID = -1145957135478951066L;
+    private static final long serialVersionUID = -5821687458026469928L;
     private Long accountTypeId;
     private String mnemonic;
     private String accountTypeName;
@@ -30,9 +30,15 @@ public class AccountType implements Serializable {
         this.creationDate = creationDate;
     }
 
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
+        this.mnemonic = mnemonic;
+        this.accountTypeName = accountTypeName;
+        this.creationDate = creationDate;
+    }
+
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
+    @SequenceGenerator(name = "ACCOUNT_TYPE_SEQ", sequenceName = "ACCOUNT_TYPE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_TYPE_SEQ")
 
     @Column(name = "ACCOUNT_TYPE_ID")
     public Long getAccountTypeId() {
