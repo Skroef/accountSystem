@@ -45,7 +45,6 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
     @PostMapping("")
     @ApiOperation(value = "Creates a new AccountType", notes = "Creates a new AccountType in the DB.")
     @ApiResponses(value = {

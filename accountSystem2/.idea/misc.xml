@@ -15,9 +15,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/AccountSystem/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemLogic/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemRepository/pom.xml" />
-        <option value="$PROJECT_DIR$/AccountSystemTranslator/pom.xml" />
         <option value="$PROJECT_DIR$/AccountSystemWeb/pom.xml" />
       </set>
     </option>
