@@ -34,6 +34,10 @@ public class AccountTypeDto implements Serializable {
         this.setCreationDate(accountType.getCreationDate());
     }
 
+    public void setAccountTypeName(String accountTypeName){
+        this.accountTypeName = accountTypeName;
+    }
+
     @ApiModelProperty(position = 1,
         value = "AccountType Mnemonic",
         name = "Mnemonic",
@@ -41,11 +45,13 @@ public class AccountTypeDto implements Serializable {
         dataType = "java.lang.String",
         example = "MILES",
         required = true)
-    public String getMnemonic() {return mnemonic;}
+    public String getMnemonic() {
+        return mnemonic;
+    }
 
-    public void setMnemonic(String mnemonic){this.mnemonic = mnemonic;}
-
-
+    public void setMnemonic(String mnemonic){
+        this.mnemonic = mnemonic;
+    }
     @ApiModelProperty(position = 2,
             value = "AccountType Name",
             name = "Name",
@@ -53,10 +59,9 @@ public class AccountTypeDto implements Serializable {
             dataType = "java.lang.String",
             example = "Miles",
             required = true)
-    public String getAccountTypeName() {return accountTypeName;}
-
-    public void setAccountTypeName(String accountTypeName){this.accountTypeName = accountTypeName;}
-
+    public String getAccountTypeName() {
+        return accountTypeName;
+    }
 
     @ApiModelProperty(position = 3,
             value = "AccountType Creation Date",
@@ -65,16 +70,20 @@ public class AccountTypeDto implements Serializable {
             dataType = "java.lang.String",
             example = "2020-01-01",
             allowEmptyValue = true)
-    public LocalDate getCreationDate() {return creationDate;}
+    public LocalDate getCreationDate() {
+        return creationDate;
+    }
 
-    public void setCreationDate(LocalDate creationDate){this.creationDate = creationDate;}
+    public void setCreationDate(LocalDate creationDate){
+        this.creationDate = creationDate;
+    }
 
     @Override
     public boolean equals(Object o){
         if(this == o) return true;
         if(o == null || getClass() != o.getClass()) return false;
-        AccountTypeDto that = (AccountTypeDto) o;
-        return  Objects.equals(mnemonic, that.mnemonic) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
+        AccountType that = (AccountType) o;
+        return  Objects.equals(mnemonic, that.getMnemonic()) && Objects.equals(accountTypeName, that.getAccountTypeName()) && Objects.equals(creationDate, that.getCreationDate());
     }
     @JsonIgnore
     public AccountType getAccountType(){
@@ -88,8 +97,9 @@ public class AccountTypeDto implements Serializable {
 
     @Override
     public String toString(){
-        return "AccountTypeDto{"+ "mnemonic='" + mnemonic + '\''+ ", accountTypeName='" + accountTypeName + '\'' + ", creationDate=" + creationDate + '}';
+        return "AccountTypeDto{"+ "mnemonic='" + mnemonic + '\''+
+                ", accountTypeName='" + accountTypeName + '\'' +
+                ", creationDate=" + creationDate + '}';
     }
-
 
 }

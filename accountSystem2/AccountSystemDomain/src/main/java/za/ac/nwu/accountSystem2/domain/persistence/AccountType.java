@@ -7,9 +7,8 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "Project1")
+@Table(name = "ACCOUNT_TYPE")
 public class AccountType implements Serializable {
-
 
     private static final long serialVersionUID = -5821687458026469928L;
     private Long accountTypeId;
