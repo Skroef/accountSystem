@@ -32,9 +32,9 @@ public class AccountTypeController {
     }
 
     @GetMapping("/all")
-    @ApiOperation(value = "Gets all the configured Account types.",notes = "Returns a list of account types")
+    @ApiOperation(value = "Gets all the configured Account types.", notes = "Returns a list of account types")
     @ApiResponses(value = {
-        @ApiResponse(code = 200 ,message = "Account type returned", response = GeneralResponse.class),
+        @ApiResponse(code = 200 ,message = "The Ping was received and echoed", response = GeneralResponse.class),
         @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
         @ApiResponse(code = 404 ,message = "Not found", response = GeneralResponse.class),
         @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)
@@ -61,24 +61,24 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("{mnemonic}")
-    @ApiOperation(value = "Fetch the specified AccountType.", notes = "Fetches the AccountType corresponding to the given mnemonic.")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200 ,message = "Goal Found"),
-            @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
-            @ApiResponse(code = 404 ,message = "Response Not found", response = GeneralResponse.class),
-            @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)
-    })
-    public ResponseEntity<GeneralResponse<AccountTypeDto>> getAccountType(
-            @ApiParam(value = "The mnemonic that uniquely identifies the AccountType.",
-            example = "MILES",
-            name = "mnemonic",
-            required = true)
-            @PathVariable("mnemonic") final String mnemonic){
-        AccountTypeDto accountType = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
-        GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
+//    @GetMapping("{mnemonic}")
+//    @ApiOperation(value = "Fetch the specified AccountType.", notes = "Fetches the AccountType corresponding to the given mnemonic.")
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200 ,message = "Goal Found"),
+//            @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
+//            @ApiResponse(code = 404 ,message = "Response Not found", response = GeneralResponse.class),
+//            @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)
+//    })
+//    public ResponseEntity<GeneralResponse<AccountTypeDto>> getAccountType(
+//            @ApiParam(value = "The mnemonic that uniquely identifies the AccountType.",
+//            example = "MILES",
+//            name = "mnemonic",
+//            required = true)
+//            @PathVariable("mnemonic") final String mnemonic){
+//        AccountTypeDto accountType = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
+//        GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
 }
 
 

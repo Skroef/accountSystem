@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>AccountSystemRepository</artifactId>
-    <packaging>jar</packaging>
+<!--    <packaging>jar</packaging>-->
 
     <dependencies>
         <dependency>
@@ -39,6 +39,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
-
 </project>

@@ -18,7 +18,7 @@
         <dependency>
             <groupId>za.ac.nwu.accountSystem2</groupId>
             <artifactId>AccountSystemDomain</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -33,6 +33,12 @@
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+        <!--        <dependency>-->
+<!--            <groupId>za.ac.nwu.accountSystem2</groupId>-->
+<!--            <artifactId>AccountSystemRepository</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <!--        <dependency>-->
 <!--            <groupId>za.ac.nwu.accountSystem2</groupId>-->
 <!--            <artifactId>AccountSystemRepository</artifactId>-->

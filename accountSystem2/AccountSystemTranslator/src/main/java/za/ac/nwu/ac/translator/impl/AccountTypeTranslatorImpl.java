@@ -20,14 +20,34 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
     }
 
     @Override
-    public AccountTypeDto create(AccountTypeDto accountTypeDto){
+    public List<AccountTypeDto> getAllAccountTypes(){
+        List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
         try{
-            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
-            return new AccountTypeDto(accountType);
-        } catch(Exception e){
-            throw new RuntimeException("Unable to save to the DB", e);
+            for (AccountType accountType : accountTypeRepository.findAll()){
+                accountTypeDtos.add(new AccountTypeDto(accountType));
+            }
+        } catch (Exception e){
+            throw new RuntimeException("Error 404");
         }
+        return accountTypeDtos;
     }
+
+
+    @Override
+    public AccountTypeDto create(AccountTypeDto accountTypeDto){
+        AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
+        return new AccountTypeDto(accountType);
+    }
+
+//    @Override
+//    public AccountTypeDto create(AccountTypeDto accountTypeDto){
+//        try{
+//            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
+//            return new AccountTypeDto(accountType);
+//        } catch(Exception e){
+//            throw new RuntimeException("Unable to save to the DB", e);
+//        }
+//    }
 
 //    @Override
 //    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic){
@@ -39,36 +59,23 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
 //        }
 //    }
 
-    @Override
-    public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic){
-        try{
-            return accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
-        } catch(Exception e){
-            throw new RuntimeException("Unable to read from the DB", e);
-        }
-    }
-
-    @Override
-    public List<AccountTypeDto> getAllAccountTypes(){
-        List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
-        try{
-            for (AccountType accountType : accountTypeRepository.findAll()){
-                accountTypeDtos.add(new AccountTypeDto(accountType));
-            }
-        } catch (Exception e){
-            throw new RuntimeException("Unable to read from the DB", e);
-        }
-        return accountTypeDtos;
-    }
-
-    @Override
-    public AccountTypeDto save(AccountType accountType) {
-        try {
-            return new AccountTypeDto(accountTypeRepository.save(accountType));
-        } catch (Exception e){
-            throw new RuntimeException("Unable to save to the DB", e);
-        }
-    }
+//    @Override
+//    public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic){
+//        try{
+//            return accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
+//        } catch(Exception e){
+//            throw new RuntimeException("Unable to read from the DB", e);
+//        }
+//    }
+//
+//    @Override
+//    public AccountTypeDto save(AccountType accountType) {
+//        try {
+//            return new AccountTypeDto(accountTypeRepository.save(accountType));
+//        } catch (Exception e){
+//            throw new RuntimeException("Unable to save to the DB", e);
+//        }
+//    }
 
 //    @Override
 //    public List<AccountTypeDto> getAllAccountTypes() {

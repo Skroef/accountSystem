@@ -5,18 +5,24 @@ import java.util.Objects;
 
 public class GeneralResponse<T> implements Serializable {
 
-    private static final long serialVersionUID = -3613388980582073346L;
+//    private static final long serialVersionUID = -3613388980582073346L;
     private final boolean successful;
     private final transient T payload;
 
     public GeneralResponse(boolean successful, T payload) {
-        this.successful=successful;
-        this.payload=payload;
+        this.successful = successful;
+        this.payload = payload;
     }
 
-    public boolean isSuccessful(){return successful;}
+    public boolean isSuccessful(){
 
-    public T getPayLoad(){return payload;}
+        return successful;
+    }
+
+    public T getPayLoad(){
+
+        return payload;
+    }
 
     @Override
     public boolean equals(Object o){
@@ -27,7 +33,10 @@ public class GeneralResponse<T> implements Serializable {
     }
 
     @Override
-    public int hashCode(){return Objects.hash(successful,payload);}
+    public int hashCode(){
+
+        return Objects.hash(successful,payload);
+    }
 
     @Override
     public String toString(){
