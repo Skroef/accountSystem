@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.repo.persistance.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
-import za.ac.nwu.accountSystem2.domain.dto.AccountTypeDto;
-import za.ac.nwu.accountSystem2.domain.persistence.AccountType;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.persistence.AccountType;
 
 import java.util.ArrayList;
 import java.util.List;

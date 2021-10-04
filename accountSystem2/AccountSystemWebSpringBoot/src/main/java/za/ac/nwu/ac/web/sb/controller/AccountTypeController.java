@@ -7,13 +7,16 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.ac.nwu.accountSystem2.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.logic.flow.CreateAccountTypeFlow;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
-import za.ac.nwu.accountSystem2.domain.sevices.GeneralResponse;
+import za.ac.nwu.ac.domain.sevices.GeneralResponse;
 
 import java.util.List;
 

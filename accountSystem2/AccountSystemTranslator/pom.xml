@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <artifactId>AccountSystemTranslator</artifactId>
     <packaging>jar</packaging>
 
@@ -22,15 +21,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>za.ac.nwu.ac</groupId>
-            <artifactId>AccountSystemRepository</artifactId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>za.ac.nwu.accountSystem2</groupId>
             <artifactId>AccountSystemRepository</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
         <!--        <dependency>-->
