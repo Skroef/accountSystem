@@ -19,13 +19,13 @@ import java.util.Collections;
 @EnableSwagger2
 @Import(springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
-    @Value("{swagger.application.version}")
+    @Value("${swagger.application.version}")
     private String applicationVersion;
 
-    @Value("{swagger.application.name}")
+    @Value("${swagger.application.name}")
     private String applicationName;
 
-    @Value("{swagger.application.description}")
+    @Value("${swagger.application.description}")
     private String applicationDescription;
 
     @Bean
