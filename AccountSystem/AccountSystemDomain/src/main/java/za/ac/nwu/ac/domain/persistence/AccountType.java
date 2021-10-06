@@ -11,6 +11,7 @@ import java.util.Set;
 
     public class AccountType implements Serializable{
     private static final long serialVersionUID = 484838060832978814L;
+
     private Long accountTypeId;
     private String mnemonic;
     private String accountTypeName;
@@ -19,7 +20,7 @@ import java.util.Set;
     private Set<AccountTransaction> accountTransactions;
 
 
-    public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate) {
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
         this.accountTypeId = accountTypeId;
         this.mnemonic = mnemonic;
         this.accountTypeName = accountTypeName;
@@ -27,8 +28,8 @@ import java.util.Set;
     }
 
     public AccountType(){
-
     }
+
     @Id
     @SequenceGenerator(name = "ACCOUNT_TYPE_SEQ", sequenceName = "NINNO.ACCOUNT_TYPE_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_TYPE_SEQ")
