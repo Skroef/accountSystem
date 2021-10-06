@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "ACCOUNT_TRANSACTION", schema = "DISCOVERY")
+@Table(name = "ACCOUNT_TRANSACTION", schema = "NINNO")
 
     public class AccountTransaction implements Serializable {
     private static final long serialVersionUID = -3966255350223393107L;
@@ -29,7 +29,7 @@ import java.util.Objects;
     }
 
     @Id
-    @SequenceGenerator(name = "ACCOUNT_TRANSACTION_SEQ", sequenceName = "DISCOVERY.ACCOUNT_TRANSACTION_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "ACCOUNT_TRANSACTION_SEQ", sequenceName = "NINNO.ACCOUNT_TRANSACTION_SEQ", allocationSize = 1)
     @GeneratedValue()
     @Column(name = "ACCOUNT_TRANSACTION_ID")
     public Long getTransactionId() {
