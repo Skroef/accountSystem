@@ -41,16 +41,16 @@ public class AccountTransactionTranslatorImpl implements AccountTransactionTrans
         return accountTransactionDtos;
     }
 
-//    @Override
-//    public AccountTypeDto create(AccountTypeDto accountTypeDto){
-//        try{
-//            AccountType accountType = accountTypeRepository.save(accountTypeDto.getAccountType());
-//            return new AccountTypeDto(accountType);
-//        }
-//        catch(Exception e){
-//            throw new RuntimeException("Unable to save to the DB", e);
-//        }
-//    }
+    @Override
+    public AccountTransactionDto create(AccountTransactionDto accountTransactionDto){
+        try{
+            AccountTransaction accountTransaction = accountTransactionRepository.save(accountTransactionDto.getAccountTransaction());
+            return new AccountTransactionDto(accountTransaction);
+        }
+        catch(Exception e){
+            throw new RuntimeException("Unable to save to the DB", e);
+        }
+    }
 //
 //    @Override
 //    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic){

@@ -24,7 +24,7 @@ import java.util.Objects;
         this.transactionDate = transactionDate;
     }
 
-    public AccountTransaction(){
+    public AccountTransaction(Long amount, AccountType accountType, Long memberId, LocalDate transactionDate){
 
     }
 

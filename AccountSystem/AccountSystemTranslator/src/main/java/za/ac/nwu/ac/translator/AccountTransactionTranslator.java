@@ -9,7 +9,7 @@ public interface AccountTransactionTranslator {
 
     List<AccountTransactionDto> getAllAccountTransactions();
 
-//    AccountTypeDto create(AccountTypeDto accountType);
+    AccountTransactionDto create(AccountTransactionDto accountTransaction);
 //
 //    AccountTypeDto getAccountTypeByMnemonic(String mnemonic);
 
