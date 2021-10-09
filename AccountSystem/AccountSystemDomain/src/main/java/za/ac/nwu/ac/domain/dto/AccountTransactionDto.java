@@ -31,6 +31,7 @@ public class AccountTransactionDto implements Serializable {
         this.setAccountType(accountTransaction.getAccountType());
         this.setMemberId(accountTransaction.getMemberId());
         this.setAmount(accountTransaction.getAmount());
+        this.setTransactionDate(accountTransaction.getTransactionDate());
     }
 
     @ApiModelProperty(position = 1,
@@ -104,6 +105,11 @@ public class AccountTransactionDto implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(accountType, memberId, amount, transactionDate);
+    }
+
+    @JsonIgnore
+    public AccountTransaction getAccountTransaction(){
+        return new AccountTransaction(getAmount(), getAccountType(), getMemberId(), getTransactionDate());
     }
 
     @Override

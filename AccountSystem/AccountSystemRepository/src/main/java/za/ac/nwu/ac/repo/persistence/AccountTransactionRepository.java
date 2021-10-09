@@ -16,12 +16,5 @@ public interface AccountTransactionRepository extends JpaRepository<AccountTrans
 //    AccountType getAccountTypeByMnemonic(String mnemonic);
 
 
-//    Getting Data from more than 1 Table
-//    @Query(value = "SELECT new za.ac.nwu.ac.domain.dto.AccountTypeDto("
-//            + " at.mnemonic,"
-//            + " at.accountTypeName,"
-//            + " at.creationDate)"
-//            + "FROM" + " AccountType at"
-//            + " WHERE at.mnemonic = :mnemonic")
-//    AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic);
+
 }

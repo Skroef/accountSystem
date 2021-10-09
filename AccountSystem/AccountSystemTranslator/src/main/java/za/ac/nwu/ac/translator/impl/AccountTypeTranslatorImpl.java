@@ -30,7 +30,6 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
             }
         }
         catch(Exception e){
-//            Remember to do logging for errors
             throw new RuntimeException("Unable to read from the DB", e);
         }
 

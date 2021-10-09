@@ -16,7 +16,7 @@ import java.util.Objects;
     private Long amount;
     private LocalDate transactionDate;
 
-    public AccountTransaction(Long transactionId, AccountType accountType, Long memberId, Long amount, LocalDate transactionDate) {
+    public AccountTransaction(Long transactionId, AccountType accountType, Long memberId, LocalDate transactionDate) {
         this.transactionId = transactionId;
         this.accountType = accountType;
         this.memberId = memberId;
@@ -24,8 +24,10 @@ import java.util.Objects;
         this.transactionDate = transactionDate;
     }
 
+//    public AccountTransaction(Long amount, AccountType accountType, Long memberId, LocalDate transactionDate){
+//
+//    }
     public AccountTransaction(){
-
     }
 
     @Id
@@ -40,8 +42,9 @@ import java.util.Objects;
         this.transactionId = transactionId;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ACCOUNT_TYPE_ID")
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "ACCOUNT_TYPE_ID")
+    @Column(name = "ACCOUNT_TYPE_ID")
     public AccountType getAccountType(){
         return accountType;
     }
