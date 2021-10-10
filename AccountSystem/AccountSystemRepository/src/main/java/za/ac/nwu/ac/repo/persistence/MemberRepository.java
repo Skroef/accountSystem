@@ -15,7 +15,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
             + " FROM "
             + " Member at "
             + "WHERE at.contactNumber = :contactNumber")
-    Member getMemberByContactNumber(long contactNumber);
+    Member getMemberByContactNumber(String contactNumber);
 
     //   Delete entity from DB VIA mnemonic
     @Modifying
@@ -23,7 +23,7 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
             + " FROM "
             + " Member at "
             + "WHERE at.contactNumber = :contactNumber")
-    void deleteMember(long contactNumber);
+    void deleteMember(String contactNumber);
 
 
     //      Update entity in the DB

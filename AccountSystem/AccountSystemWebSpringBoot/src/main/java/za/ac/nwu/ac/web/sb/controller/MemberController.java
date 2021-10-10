@@ -77,7 +77,7 @@ public class MemberController {
                     example = "0780243567",
                     name = "contactNumber",
                     required = true)
-            @PathVariable("contactNumber") final long contactNumber){
+            @PathVariable("contactNumber") final String contactNumber){
 
         MemberDto member = fetchMemberFlow.getMemberByContactNumber(contactNumber);
         GeneralResponse<MemberDto> response = new GeneralResponse<>(true, member);
@@ -97,7 +97,7 @@ public class MemberController {
                     example = "0780243567",
                     name = "contactNumber",
                     required = true)
-            @PathVariable("contactNumber") final long contactNumber){
+            @PathVariable("contactNumber") final String contactNumber){
 
         MemberDto member = modifyMemberFlow.deleteMember(contactNumber);
         GeneralResponse<MemberDto> response = new GeneralResponse<>(true, member);

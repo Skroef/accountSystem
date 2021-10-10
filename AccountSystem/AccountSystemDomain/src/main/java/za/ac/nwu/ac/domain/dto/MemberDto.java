@@ -17,14 +17,14 @@ public class MemberDto implements Serializable {
 
     private String name;
     private String surname;
-    private long contactNumber;
+    private String contactNumber;
     private long miles;
     private LocalDate startDate;
 
     public MemberDto(){
     }
 
-    public MemberDto(String name, String surname, long contactNumber, long miles, LocalDate startDate) {
+    public MemberDto(String name, String surname, String contactNumber, long miles, LocalDate startDate) {
         this.name = name;
         this.surname = surname;
         this.contactNumber = contactNumber;
@@ -74,14 +74,14 @@ public class MemberDto implements Serializable {
             value = "Contact Number",
             name = "ContactNumber",
             notes = "The Contact Number of the Discovery Member",
-            dataType = "java.lang.long",
+            dataType = "java.lang.String",
             example = "0780243567",
             required = true)
-    public long getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(long contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 

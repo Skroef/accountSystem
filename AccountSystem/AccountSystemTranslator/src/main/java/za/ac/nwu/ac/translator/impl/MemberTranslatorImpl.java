@@ -51,7 +51,7 @@ public class MemberTranslatorImpl implements MemberTranslator {
 
 
     @Override
-    public MemberDto getMemberByContactNumber(long contactNumber){
+    public MemberDto getMemberByContactNumber(String contactNumber){
         try{
             Member member = memberRepository.getMemberByContactNumber(contactNumber);
             return new MemberDto(member);
@@ -62,7 +62,7 @@ public class MemberTranslatorImpl implements MemberTranslator {
 
     @Override
     @Transactional
-    public MemberDto deleteMember(long contactNumber){
+    public MemberDto deleteMember(String contactNumber){
         try{
             Member member = memberRepository.getMemberByContactNumber(contactNumber);
             memberRepository.deleteMember(contactNumber);

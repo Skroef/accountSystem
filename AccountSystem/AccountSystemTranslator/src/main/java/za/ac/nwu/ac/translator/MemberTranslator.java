@@ -10,9 +10,9 @@ public interface MemberTranslator {
 
     MemberDto create(MemberDto member);
 
-    MemberDto getMemberByContactNumber(long contactNumber);
+    MemberDto getMemberByContactNumber(String contactNumber);
 
-    MemberDto deleteMember(long contactNumber);
+    MemberDto deleteMember(String contactNumber);
 
 //    MemberDto updateMiles(MemberDto member);
 }

@@ -28,7 +28,7 @@ public class FetchMemberFlowImpl implements FetchMemberFlow {
     }
 
     @Override
-    public MemberDto getMemberByContactNumber(long contactNumber){
+    public MemberDto getMemberByContactNumber(String contactNumber){
         return memberTranslator.getMemberByContactNumber(contactNumber);
     }
 }

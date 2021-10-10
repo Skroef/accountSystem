@@ -8,5 +8,5 @@ public interface FetchMemberFlow {
 
     List<MemberDto> getAllMembers();
 
-    MemberDto getMemberByContactNumber(long contactNumber);
+    MemberDto getMemberByContactNumber(String contactNumber);
 }

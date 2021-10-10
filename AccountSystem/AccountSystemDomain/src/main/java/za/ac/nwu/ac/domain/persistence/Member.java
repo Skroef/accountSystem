@@ -16,7 +16,7 @@ public class Member implements Serializable {
     private Long memberId;
     private String name;
     private String surname;
-    private long contactNumber;
+    private String contactNumber;
     private long miles;
     private LocalDate startDate;
 
@@ -24,7 +24,7 @@ public class Member implements Serializable {
 
 
 
-    public Member(String name, String surname, long contactNumber, LocalDate startDate, long miles) {
+    public Member(String name, String surname, String contactNumber, LocalDate startDate, long miles) {
         this.memberId = memberId;
         this.name = name;
         this.surname = surname;
@@ -33,7 +33,7 @@ public class Member implements Serializable {
         this.startDate = startDate;
     }
 
-    public Member(long contactNumber, long miles){
+    public Member(){
     }
 
     @Id
@@ -67,11 +67,11 @@ public class Member implements Serializable {
     }
 
     @Column(name = "CONTACT_NUMBER")
-    public long getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(long contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 

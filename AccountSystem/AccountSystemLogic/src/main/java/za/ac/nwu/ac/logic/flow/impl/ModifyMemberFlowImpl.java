@@ -21,7 +21,7 @@ public class ModifyMemberFlowImpl implements ModifyMemberFlow {
 
 
     @Override
-    public MemberDto deleteMember(long contactNumber){
+    public MemberDto deleteMember(String contactNumber){
         MemberDto result = memberTranslator.deleteMember(contactNumber);
         return result;
     }
