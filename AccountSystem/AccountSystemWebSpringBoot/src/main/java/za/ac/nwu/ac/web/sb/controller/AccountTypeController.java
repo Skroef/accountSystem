@@ -68,7 +68,9 @@ public class AccountTypeController {
             @ApiParam(value = "Request body to create a new AccountType.", required = true)
             @RequestBody AccountTypeDto accountType) {
 
+        LOGGER.info("Attempting to Create a AccountType");
         AccountTypeDto accountTypeResponse = createAccountTypeFlow.create(accountType);
+        LOGGER.info("Created AccountType {} ", accountTypeResponse);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountTypeResponse);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
@@ -88,7 +90,9 @@ public class AccountTypeController {
             required = true)
             @PathVariable("mnemonic") final String mnemonic){
 
+        LOGGER.info("Attempting to fetch a certain AccountType");
         AccountTypeDto accountType = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
+        LOGGER.info("Fetched AccountType {} ", accountType);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
@@ -108,7 +112,9 @@ public class AccountTypeController {
                     required = true)
             @PathVariable("mnemonic") final String mnemonic){
 
+        LOGGER.info("Attempting to delete a certain AccountType");
         AccountTypeDto accountType = modifyAccountTypeFlow.deleteAccountType(mnemonic);
+        LOGGER.info("Deleted AccountType {} ", accountType);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

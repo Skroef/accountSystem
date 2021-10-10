@@ -2,6 +2,8 @@ package za.ac.nwu.ac.translator.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.dto.AddMilesDto;
 import za.ac.nwu.ac.domain.dto.MemberDto;
 import za.ac.nwu.ac.domain.persistence.Member;
 import za.ac.nwu.ac.repo.persistence.MemberRepository;
@@ -73,15 +75,26 @@ public class MemberTranslatorImpl implements MemberTranslator {
     }
 
 
-//    @Override
-//    @Transactional
-//    public MemberDto updateMiles(MemberDto member){
-//        try{
-//            memberRepository.updateMiles(member.getContactNumber(), member.getMiles());
-//            return member;
-//        } catch(Exception e){
-//            throw new RuntimeException("Unable to update entity in the DB", e);
-//        }
-//    }
+    @Override
+    @Transactional
+    public MemberDto addMiles(MemberDto member){
+        try{
+            memberRepository.addMiles(member.getName(), member.getSurname(), member.getContactNumber(), member.getMiles(), member.getStartDate());
+            return member;
+        } catch(Exception e){
+            throw new RuntimeException("Unable to update entity in the DB", e);
+        }
+    }
+
+    @Override
+    @Transactional
+    public MemberDto subtractMiles(MemberDto member){
+        try{
+            memberRepository.subtractMiles(member.getName(), member.getSurname(), member.getContactNumber(), member.getMiles(), member.getStartDate());
+            return member;
+        } catch(Exception e){
+            throw new RuntimeException("Unable to update entity in the DB", e);
+        }
+    }
 
 }

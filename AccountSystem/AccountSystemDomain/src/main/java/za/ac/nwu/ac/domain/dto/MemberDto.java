@@ -18,13 +18,13 @@ public class MemberDto implements Serializable {
     private String name;
     private String surname;
     private String contactNumber;
-    private long miles;
+    private Integer miles;
     private LocalDate startDate;
 
     public MemberDto(){
     }
 
-    public MemberDto(String name, String surname, String contactNumber, long miles, LocalDate startDate) {
+    public MemberDto(String name, String surname, String contactNumber, Integer miles, LocalDate startDate) {
         this.name = name;
         this.surname = surname;
         this.contactNumber = contactNumber;
@@ -86,6 +86,21 @@ public class MemberDto implements Serializable {
     }
 
     @ApiModelProperty(position = 4,
+            value = "Miles",
+            name = "Miles",
+            notes = "The current amount of Miles the Discovery Member has",
+            dataType = "java.lang.Integer",
+            example = "8000",
+            required = true)
+    public Integer getMiles() {
+        return miles;
+    }
+
+    public void setMiles(Integer miles) {
+        this.miles = miles;
+    }
+
+    @ApiModelProperty(position = 5,
             value = "Start Date",
             name = "StartDate",
             notes = "This is the date on which the Member was created",
@@ -100,20 +115,6 @@ public class MemberDto implements Serializable {
         this.startDate = startDate;
     }
 
-    @ApiModelProperty(position = 5,
-            value = "Miles",
-            name = "Miles",
-            notes = "The current amount of Miles the Discovery Member has",
-            dataType = "java.lang.long",
-            example = "8000",
-            required = true)
-    public long getMiles() {
-        return miles;
-    }
-
-    public void setMiles(long miles) {
-        this.miles = miles;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -125,7 +126,7 @@ public class MemberDto implements Serializable {
 
     @JsonIgnore
     public Member getMember(){
-        return new Member(getName(), getSurname(), getContactNumber(), getStartDate(), getMiles());
+        return new Member(getName(), getSurname(), getContactNumber(), getMiles(), getStartDate());
     }
 
 

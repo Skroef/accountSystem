@@ -10,5 +10,4 @@ public interface ModifyAccountTypeFlow {
 
     AccountTypeDto updateAccountType(AccountTypeDto accountType);
 
-
 }

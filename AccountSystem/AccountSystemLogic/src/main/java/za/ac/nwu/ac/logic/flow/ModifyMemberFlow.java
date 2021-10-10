@@ -6,5 +6,9 @@ public interface ModifyMemberFlow {
 
     MemberDto deleteMember(String contactNumber);
 
-//    MemberDto updateMiles(MemberDto member);
+    MemberDto addMiles(MemberDto member);
+
+    MemberDto subtractMiles(MemberDto member);
+
+//    MemberDto subtractMiles(MemberDto member);
 }

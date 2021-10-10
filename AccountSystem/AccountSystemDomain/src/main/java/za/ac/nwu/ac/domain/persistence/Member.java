@@ -17,14 +17,11 @@ public class Member implements Serializable {
     private String name;
     private String surname;
     private String contactNumber;
-    private long miles;
+    private Integer miles;
     private LocalDate startDate;
 
-//    private Set<AccountTransaction> accountTransactions;
 
-
-
-    public Member(String name, String surname, String contactNumber, LocalDate startDate, long miles) {
+    public Member(String name, String surname, String contactNumber, Integer miles, LocalDate startDate) {
         this.memberId = memberId;
         this.name = name;
         this.surname = surname;
@@ -41,66 +38,69 @@ public class Member implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ")
     @Column(name = "MEMBER_ID")
     public Long getMemberId() {
+
         return memberId;
     }
 
     public void setMemberId(Long memberId) {
+
         this.memberId = memberId;
     }
 
     @Column(name = "NAME")
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     @Column(name = "SURNAME")
     public String getSurname() {
+
         return surname;
     }
 
     public void setSurname(String surname) {
+
         this.surname = surname;
     }
 
     @Column(name = "CONTACT_NUMBER")
     public String getContactNumber() {
+
         return contactNumber;
     }
 
     public void setContactNumber(String contactNumber) {
+
         this.contactNumber = contactNumber;
     }
 
     @Column(name = "MILES")
-    public long getMiles() {
+    public Integer getMiles() {
+
         return miles;
     }
 
-    public void setMiles(long miles) {
+    public void setMiles(Integer miles) {
+
         this.miles = miles;
     }
 
-    @Column(name = "STRAT_DATE")
+    @Column(name = "START_DATE")
     public LocalDate getStartDate() {
+
         return startDate;
     }
 
     public void setStartDate(LocalDate startDate) {
+
         this.startDate = startDate;
     }
-
-//    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
-//    public Set<AccountTransaction> getAccountTransactions(){
-//        return accountTransactions;
-//    }
-//
-//    public void setAccountTransactions(Set<AccountTransaction> accountTransactions){
-//        this.accountTransactions = accountTransactions;
-//    }
 
 
     @Override

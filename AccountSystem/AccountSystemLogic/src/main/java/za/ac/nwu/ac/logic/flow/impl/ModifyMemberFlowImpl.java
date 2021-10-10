@@ -2,6 +2,8 @@ package za.ac.nwu.ac.logic.flow.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
+import za.ac.nwu.ac.domain.dto.AddMilesDto;
 import za.ac.nwu.ac.domain.dto.MemberDto;
 import za.ac.nwu.ac.logic.flow.ModifyMemberFlow;
 import za.ac.nwu.ac.translator.MemberTranslator;
@@ -26,10 +28,22 @@ public class ModifyMemberFlowImpl implements ModifyMemberFlow {
         return result;
     }
 
-//    @Override
-//    public MemberDto updateMiles(MemberDto member){
-//        MemberDto result = memberTranslator.updateMiles(member);
-//        return result;
-//    }
+    @Override
+    public MemberDto addMiles(MemberDto member){
+        int currentBalance = memberTranslator.getMemberByContactNumber(member.getContactNumber()).getMiles();
+        currentBalance = currentBalance + member.getMiles();
+        member.setMiles(currentBalance);
+        MemberDto result = memberTranslator.addMiles(member);
+        return result;
+    }
+
+    @Override
+    public MemberDto subtractMiles(MemberDto member){
+        int currentBalance = memberTranslator.getMemberByContactNumber(member.getContactNumber()).getMiles();
+        currentBalance = currentBalance - member.getMiles();
+        member.setMiles(currentBalance);
+        MemberDto result = memberTranslator.subtractMiles(member);
+        return result;
+    }
 
 }
