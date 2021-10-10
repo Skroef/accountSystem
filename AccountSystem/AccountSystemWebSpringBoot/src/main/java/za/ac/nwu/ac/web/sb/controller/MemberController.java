@@ -13,6 +13,7 @@ import za.ac.nwu.ac.domain.dto.MemberDto;
 import za.ac.nwu.ac.domain.service.GeneralResponse;
 import za.ac.nwu.ac.logic.flow.CreateMemberFlow;
 import za.ac.nwu.ac.logic.flow.FetchMemberFlow;
+import za.ac.nwu.ac.logic.flow.ModifyMemberFlow;
 
 import java.util.List;
 
@@ -22,12 +23,15 @@ public class MemberController {
 
     private final FetchMemberFlow fetchMemberFlow;
     private final CreateMemberFlow createMemberFlow;
+    private final ModifyMemberFlow modifyMemberFlow;
 
     @Autowired
     public MemberController(FetchMemberFlow fetchMemberFlow,
-                                 @Qualifier("createMemberFlowName") CreateMemberFlow createMemberFlow){
+                                 @Qualifier("createMemberFlowName") CreateMemberFlow createMemberFlow,
+                                    ModifyMemberFlow modifyMemberFlow){
         this.fetchMemberFlow = fetchMemberFlow;
         this.createMemberFlow = createMemberFlow;
+        this.modifyMemberFlow = modifyMemberFlow;
     }
 
     @GetMapping("/all")
@@ -73,10 +77,60 @@ public class MemberController {
                     example = "0780243567",
                     name = "contactNumber",
                     required = true)
-            @PathVariable("contactNumber") final int contactNumber){
+            @PathVariable("contactNumber") final long contactNumber){
 
         MemberDto member = fetchMemberFlow.getMemberByContactNumber(contactNumber);
         GeneralResponse<MemberDto> response = new GeneralResponse<>(true, member);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    @DeleteMapping("{contactNumber}")
+    @ApiOperation(value = "Delete the specified member.", notes = "Deletes the member corresponding to the given Contact Number.")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200 ,message = "Member Deleted"),
+            @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
+            @ApiResponse(code = 404 ,message = "Response Not found", response = GeneralResponse.class),
+            @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)
+    })
+    public ResponseEntity<GeneralResponse<MemberDto>> deleteMember(
+            @ApiParam(value = "The contact number that uniquely identifies the Member.",
+                    example = "0780243567",
+                    name = "contactNumber",
+                    required = true)
+            @PathVariable("contactNumber") final long contactNumber){
+
+        MemberDto member = modifyMemberFlow.deleteMember(contactNumber);
+        GeneralResponse<MemberDto> response = new GeneralResponse<>(true, member);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+//    @PutMapping("{contactNumber}")
+//    @ApiOperation(value = "Update the specified Member.", notes = "Updates the Member corresponding to the given contact number.")
+//    @ApiResponses(value = {
+//            @ApiResponse(code = 200 ,message = "Account Updated"),
+//            @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
+//            @ApiResponse(code = 404 ,message = "Response Not found", response = GeneralResponse.class),
+//            @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)
+//    })
+//    public ResponseEntity<GeneralResponse<MemberDto>> updateMile(
+//            @ApiParam(value = "The contact number that uniquely identifies the Member.",
+//                    example = "0780243567",
+//                    name = "contactNumber",
+//                    required = true)
+//            @PathVariable("contactNumber") final long contactNumber,
+//
+//            @ApiParam(value = "The new updated miles",
+//                    name = "newMiles",
+//                    required = true)
+//            @RequestParam("newMiles") final long newMiles)
+//
+//    {
+//
+//        MemberDto inputValue = new MemberDto(newMiles, contactNumber);
+//        MemberDto member = modifyMemberFlow.updateMiles(inputValue);
+//        GeneralResponse<MemberDto> response = new GeneralResponse<>(true, member);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//
+//    }
+
 }

@@ -7,6 +7,7 @@ import za.ac.nwu.ac.domain.persistence.Member;
 import za.ac.nwu.ac.repo.persistence.MemberRepository;
 import za.ac.nwu.ac.translator.MemberTranslator;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,4 +59,29 @@ public class MemberTranslatorImpl implements MemberTranslator {
             throw new RuntimeException("Unable to read from the DB", e);
         }
     }
+
+    @Override
+    @Transactional
+    public MemberDto deleteMember(long contactNumber){
+        try{
+            Member member = memberRepository.getMemberByContactNumber(contactNumber);
+            memberRepository.deleteMember(contactNumber);
+            return new MemberDto(member);
+        } catch(Exception e){
+            throw new RuntimeException("Unable to delete entity from the DB", e);
+        }
+    }
+
+
+//    @Override
+//    @Transactional
+//    public MemberDto updateMiles(MemberDto member){
+//        try{
+//            memberRepository.updateMiles(member.getContactNumber(), member.getMiles());
+//            return member;
+//        } catch(Exception e){
+//            throw new RuntimeException("Unable to update entity in the DB", e);
+//        }
+//    }
+
 }

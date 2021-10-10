@@ -42,14 +42,16 @@ import java.util.Objects;
         this.transactionId = transactionId;
     }
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "ACCOUNT_TYPE_ID")
-    @Column(name = "ACCOUNT_TYPE_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ACCOUNT_TYPE_ID")
+//    @Column(name = "ACCOUNT_TYPE_ID")
     public AccountType getAccountType(){
+
         return accountType;
     }
 
     public void setAccountType(AccountType accountType) {
+
         this.accountType = accountType;
     }
 

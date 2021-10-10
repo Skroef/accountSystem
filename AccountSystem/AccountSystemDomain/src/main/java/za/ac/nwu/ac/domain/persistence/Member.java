@@ -33,7 +33,7 @@ public class Member implements Serializable {
         this.startDate = startDate;
     }
 
-    public Member(){
+    public Member(long contactNumber, long miles){
     }
 
     @Id

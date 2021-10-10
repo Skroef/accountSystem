@@ -1,13 +1,17 @@
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\CreateAccountTypeFlowImpl.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\CreateMemberFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\FetchAccountTransactionFlow.java
+C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\ModifyMemberFlowImpl.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\config\LogicConfig.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\FetchMemberFlowImpl.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\CreateAccountTransactionFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\FetchAccountTransactionFlowImpl.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\FetchAccountTypeFlowImpl.java
+C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\ModifyAccountTypeFlowImpl.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\FetchAccountTypeFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\CreateAccountTransactionFlowImpl.java
+C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\ModifyAccountTypeFlow.java
+C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\ModifyMemberFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\FetchMemberFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\CreateAccountTypeFlow.java
 C:\nwu\AccountSystem\AccountSystemLogic\src\main\java\za\ac\nwu\ac\logic\flow\impl\CreateMemberFlowImpl.java

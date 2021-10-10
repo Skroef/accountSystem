@@ -1,6 +1,8 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
@@ -18,15 +20,20 @@ import java.util.List;
 @Component("createMemberFlowName")
 public class CreateMemberFlowImpl implements CreateMemberFlow {
 
+//    private static final Logger LOGGER = LoggerFactory.getLogger(CreateMemberFlowImpl.class)
+
     private final MemberTranslator memberTranslator;
 
 
     public CreateMemberFlowImpl(MemberTranslator memberTranslator){
+
         this.memberTranslator = memberTranslator;
     }
 
     @Override
     public MemberDto create(MemberDto member){
+//        LOGGER.info("The input Object was {}", member);
+
         if(member.getStartDate() == null){
             member.setStartDate(LocalDate.now());
         }

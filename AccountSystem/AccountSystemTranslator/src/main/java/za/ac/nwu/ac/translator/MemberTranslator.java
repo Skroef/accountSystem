@@ -11,4 +11,8 @@ public interface MemberTranslator {
     MemberDto create(MemberDto member);
 
     MemberDto getMemberByContactNumber(long contactNumber);
+
+    MemberDto deleteMember(long contactNumber);
+
+//    MemberDto updateMiles(MemberDto member);
 }

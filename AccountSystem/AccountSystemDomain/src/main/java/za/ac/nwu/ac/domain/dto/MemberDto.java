@@ -104,7 +104,7 @@ public class MemberDto implements Serializable {
             value = "Miles",
             name = "Miles",
             notes = "The current amount of Miles the Discovery Member has",
-            dataType = "java.lang.String",
+            dataType = "java.lang.long",
             example = "8000",
             required = true)
     public long getMiles() {
@@ -127,6 +127,7 @@ public class MemberDto implements Serializable {
     public Member getMember(){
         return new Member(getName(), getSurname(), getContactNumber(), getStartDate(), getMiles());
     }
+
 
     @Override
     public int hashCode() {

@@ -7,6 +7,8 @@ import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.repo.persistence.AccountTypeRepository;
 import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
+import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,12 +59,28 @@ public class AccountTypeTranslatorImpl implements AccountTypeTranslator {
         }
     }
 
-//    @Override
-//    public AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic){
-//        try{
-//            return accountTypeRepository.getAccountTypeDtoByMnemonic(mnemonic);
-//        } catch(Exception e){
-//            throw new RuntimeException("Unable to read from the DB", e);
-//        }
-//    }
+    @Override
+    @Transactional
+    public AccountTypeDto deleteAccountType(String mnemonic){
+        try{
+            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonic(mnemonic);
+            accountTypeRepository.deleteAccountType(mnemonic);
+            return new AccountTypeDto(accountType);
+        } catch(Exception e){
+            throw new RuntimeException("Unable to delete entity from the DB", e);
+        }
+    }
+
+    @Override
+    @Transactional
+    public AccountTypeDto updateAccountType(AccountTypeDto accountType){
+        try{
+            accountTypeRepository.updateAccountType(accountType.getMnemonic(), accountType.getAccountTypeName(), accountType.getCreationDate());
+            return accountType;
+        } catch(Exception e){
+            throw new RuntimeException("Unable to update entity in the DB", e);
+        }
+    }
+
+
 }
